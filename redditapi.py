@@ -5,7 +5,7 @@ def getPostImageFromReddit(subreddit:str = "programminghumor", sort_by:str = "ho
     reddit = requests.get(
         "https://www.reddit.com/r/" + subreddit + "/" + sort_by + "/.json?count=1",
         headers = {
-            "User-agent":"NCIGF_Bot"
+            "User-agent":"Hi_Reddit_Bot"
         }
     )
 
