@@ -1,35 +1,38 @@
 import requests, ctypes, urllib.request, winreg
 from pathlib import Path
 
+def getPostImageFromReddit(subreddit:str = "programminghumor", sort_by:str = "hot") -> str:
+    reddit = requests.get(
+        "https://www.reddit.com/r/" + subreddit + "/" + sort_by + "/.json?count=1",
+        headers = {
+            "User-agent":"NCIGF_Bot"
+        }
+    )
 
-desktop_wallpaper = 20
+    if reddit.status_code != 200:
+        print("Couldn't query reddit.")
 
-subreddit = "ProgrammingHumor"
+    response = reddit.json()
 
-reddit = requests.get(
-    "https://www.reddit.com/r/programminghumor/hot/.json?count=1",
-    headers = {
-        "User-agent":"NCIGF_Bot"
-    }
-)
+    first_post = response["data"]["children"][0]["data"]
+    return first_post["url"]
 
-if reddit.status_code != 200:
-    exit()
+def downloadImage(external_image_path:str) -> str:
 
-response = reddit.json()
+    home_directory = str(Path.home())
+    image_name = external_image_path.split("/")[-1]
+    image_local = home_directory + "/Pictures/" + image_name
+    urllib.request.urlretrieve(external_image_path, image_local)
+    return image_local
 
-first_post = response["data"]["children"][0]["data"]
-title = first_post["title"]
-image_url = first_post["url"]
-link_to_post = first_post["permalink"]
+def setImageAsWindowsBackground(local_image_path:str) -> str:
+    desktop_wallpaper = 20
+    ctypes.windll.user32.SystemParametersInfoW(desktop_wallpaper, 0, local_image_path, 0)
 
-home_directory = str(Path.home()) + "/"
-image_name = image_url.split("/")[-1]
+external_image = getPostImageFromReddit("programminghumor", "hot")
 
-image_local = home_directory + image_name
+local_image = downloadImage(external_image)
 
-urllib.request.urlretrieve(image_url, image_local)
-
-ctypes.windll.user32.SystemParametersInfoW(desktop_wallpaper, 0, image_local, 0)
+setImageAsWindowsBackground(local_image)
 
 exit(0)
