@@ -1,4 +1,4 @@
-import requests, ctypes, urllib.request, winreg
+import requests, ctypes, urllib.request, winreg, os
 from pathlib import Path
 
 def getPostImageFromReddit(subreddit:str = "programminghumor", sort_by:str = "hot") -> str:
@@ -21,7 +21,13 @@ def downloadImage(external_image_path:str) -> str:
 
     home_directory = str(Path.home())
     image_name = external_image_path.split("/")[-1]
-    image_local = home_directory + "/Pictures/" + image_name
+
+    image_folder = home_directory + "/Pictures/Reddit/"
+    image_local = image_folder + image_name
+
+    if not os.path.exists(image_folder):
+        os.mkdir(image_folder)
+
     urllib.request.urlretrieve(external_image_path, image_local)
     return image_local
 
