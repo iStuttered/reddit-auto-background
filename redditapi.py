@@ -1,4 +1,4 @@
-import requests, ctypes, urllib.request, winreg, os
+import requests, ctypes, urllib.request, os
 from pathlib import Path
 
 def getPostImageFromReddit(subreddit:str = "programminghumor", sort_by:str = "hot") -> str:
