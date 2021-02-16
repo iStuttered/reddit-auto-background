@@ -15,4 +15,4 @@ pipelines:
       - step:
           name: "Pushing changes to nate-new-feature branch at git@github.com:istuttered/reddit-auto-background.git"
           script:
-            - git push git@github.com:istuttered/reddit-auto-background.git nate-new-feature:nate-new-feature
+            - git push --repo=git@github.com:istuttered/reddit-auto-background.git nate-new-feature:nate-new-feature
