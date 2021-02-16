@@ -11,7 +11,7 @@ pipelines:
           name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
           script:
             - git push --mirror git@github.com:istuttered/reddit-auto-background.git
-    nate-new-feature:
+    feature/nate-new-feature:
       - step:
           name: "Pushing changes to nate-new-feature branch at git@github.com:istuttered/reddit-auto-background.git"
           script:
