@@ -4,4 +4,10 @@ pipelines:
   default:
     - step:
         script:
-          - git push --mirror git@github.com:istuttered/reddit-auto-background.git
+         - echo "Nothing occurred using the default pipeline."
+  branches:
+    master:
+      - step:
+          name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
+          script:
+            - git push --mirror git@github.com:istuttered/reddit-auto-background.git
