@@ -11,4 +11,5 @@ pipelines:
           name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
+            - git pull reddit
             - git push reddit master:test-branch
