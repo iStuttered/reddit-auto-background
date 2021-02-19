@@ -12,6 +12,9 @@ pipelines:
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - git pull reddit test-branch
+            - get checkout reddit test-branch
+            - git merge test-branch --squash
+            - git commit -m "Compressing commits."
             # - git checkout reddit/test-branch
             # - git rm bitbucket-pipelines.yml
             # - git commit -m "Removing pipeline.yml"
