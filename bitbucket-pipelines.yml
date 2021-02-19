@@ -12,8 +12,8 @@ pipelines:
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - git pull reddit test-branch
-            - git checkout reddit/test-branch
-            - git rm bitbucket-pipelines.yml
-            - git commit -m "Removing pipeline.yml"
-            - git checkout origin/master
+            # - git checkout reddit/test-branch
+            # - git rm bitbucket-pipelines.yml
+            # - git commit -m "Removing pipeline.yml"
+            # - git checkout origin/master
             - git push reddit master:test-branch
