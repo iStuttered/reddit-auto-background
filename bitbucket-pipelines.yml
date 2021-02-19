@@ -13,5 +13,5 @@ pipelines:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - git branch temp-branch
             - git rebase master temp-branch
-            - git pull reddit test-branch
+            - git pull reddit revert-2-master
             - git push reddit temp-branch:test-branch
