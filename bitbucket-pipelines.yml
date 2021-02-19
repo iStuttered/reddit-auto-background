@@ -14,5 +14,4 @@ pipelines:
             - git branch temp-branch
             - git rebase master temp-branch
             - git pull reddit test-branch
-
             - git push reddit temp-branch:test-branch
