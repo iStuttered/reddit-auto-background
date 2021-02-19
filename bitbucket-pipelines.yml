@@ -12,7 +12,7 @@ pipelines:
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - git pull reddit test-branch
-            - git checkout reddit test-branch
+            - git checkout reddit/test-branch
             - rm bitbucket-pipelines.yml
             - git commit --amend
             - git checkout origin/master
