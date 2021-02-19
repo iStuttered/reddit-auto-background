@@ -14,6 +14,6 @@ pipelines:
             - git pull reddit test-branch
             - git checkout reddit/test-branch
             - rm bitbucket-pipelines.yml
-            - git commit --amend
+            - git commit -m "Removing pipeline.yml"
             - git checkout origin/master
             - git push reddit master:test-branch
