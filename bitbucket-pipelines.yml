@@ -16,12 +16,13 @@ pipelines:
             - echo "ALL BRANCHES"
             - git branch --list
             - echo "NEW BRANCH temp-branch"
-            - git branch temp-branch --show-current
+            - git branch temp-branch
+            - echo "CURRENT BRANCH temp-branch"
+            - git branch --show-current
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
             - ls ..
-            - cp ./test-branch/* ./temp-branch/.
             - git rm bitbucket-pipelines.yml
             - git add .
             - echo "ALL staged files"
