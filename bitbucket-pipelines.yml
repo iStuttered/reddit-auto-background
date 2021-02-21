@@ -11,8 +11,12 @@ pipelines:
           name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
+            - echo "CURRENT BRANCH test-branch"
             - git pull reddit test-branch
-            - git branch temp-branch
+            - echo "ALL BRANCHES"
+            - git branch --list
+            - echo "NEW BRANCH temp-branch"
+            - git branch temp-branch --show-current
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
