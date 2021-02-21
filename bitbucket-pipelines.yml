@@ -11,7 +11,15 @@ pipelines:
           name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
-            - git branch temp-branch
-            - git rebase master temp-branch
             - git pull reddit test-branch
+            - git branch temp-branch
+            - cp ./test-branch/* ./temp-branch/.
+            - echo "CURRENT FOLDER"
+            - ls
+            - echo "PARENT FOLDER"
+            - ls ..
+            - git rm bitbucket-pipelines.yml
+            - git add .
+            -gi
+            - git rebase master temp-branch
             - git push reddit temp-branch:test-branch
