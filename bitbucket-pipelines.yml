@@ -13,11 +13,11 @@ pipelines:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - git pull reddit test-branch
             - git branch temp-branch
-            - cp ./test-branch/* ./temp-branch/.
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
             - ls ..
+            - cp ./test-branch/* ./temp-branch/.
             - git rm bitbucket-pipelines.yml
             - git add .
             - echo "ALL staged files"
