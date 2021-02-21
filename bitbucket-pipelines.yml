@@ -20,6 +20,8 @@ pipelines:
             - ls ..
             - git rm bitbucket-pipelines.yml
             - git add .
-            -gi
-            - git rebase master temp-branch
+            - echo "ALL staged files"
+            - git diff --name-only
+            - git commit -m "Push from BitBucket to GitHub"
+            #- git rebase master temp-branch
             - git push reddit temp-branch:test-branch
