@@ -18,7 +18,6 @@ pipelines:
             - echo "NEW BRANCH temp-branch"
             - git branch temp-branch
             - echo "CURRENT BRANCH temp-branch"
-            - git branch --show-current
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
