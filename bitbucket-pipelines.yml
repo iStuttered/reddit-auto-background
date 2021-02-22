@@ -27,8 +27,6 @@ pipelines:
             - ls
             - echo "ALL staged files"
             - git diff --name-only --staged
-            - echo "IN STASH"
-            - git stash show
             - git commit -m "Push from BitBucket to GitHub"
             #- git rebase master temp-branch
             - git push reddit temp-branch:test-branch
