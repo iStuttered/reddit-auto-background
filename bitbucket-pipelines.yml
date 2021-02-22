@@ -23,7 +23,6 @@ pipelines:
             - echo "PARENT FOLDER"
             - ls ..
             - git rm bitbucket-pipelines.yml
-            - echo "Removing bitbucket-pipelines.yml results."
             - ls
             - echo "ALL staged files"
             - git diff --name-only --staged
