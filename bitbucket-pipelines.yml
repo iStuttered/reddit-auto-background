@@ -19,10 +19,5 @@ pipelines:
             - git checkout temp-branch
             - ls
             - git merge master temp-branch -Xours
-            - cat test-file-for-nick.txt
-            - ls
-            - echo "ALL staged files"
-            - git diff --name-only --staged
-            - git commit -m "Push from BitBucket to GitHub"
             #- git rebase master temp-branch
             - git push reddit temp-branch:test-branch
