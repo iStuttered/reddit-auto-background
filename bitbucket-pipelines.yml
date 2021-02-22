@@ -15,9 +15,10 @@ pipelines:
             - git checkout master
             - git rm bitbucket-pipelines.yml --force --ignore-unmatch
             - git commit -m "Removing pipeline file."
-            - git fetch reddit test-branch:temp-branch
-            - git checkout temp-branch
+            - git fetch reddit test-branch:temp-branch-initial
+            - git checkout temp-branch-initial
             - ls
-            - git merge master temp-branch -Xours
+            - git merge master temp-branch-initial -Xours
+            - git checkout --orphan temp-branch-final temp-branch-initial
             #- git rebase master temp-branch
-            - git push reddit temp-branch:test-branch
+            - git push reddit temp-branch-initial:test-branch
