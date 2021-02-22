@@ -21,7 +21,7 @@ pipelines:
             - ls
             - echo "PARENT FOLDER"
             - ls ..
-            - git rm bitbucket-pipelines.yml --ignore-unmatch
+            - git rm bitbucket-pipelines.yml --force --ignore-unmatch
             - ls
             - echo "ALL staged files"
             - git diff --name-only --staged
