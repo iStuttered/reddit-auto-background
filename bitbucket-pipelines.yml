@@ -13,7 +13,7 @@ pipelines:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - echo "CURRENT BRANCH temp-branch"
             - git checkout --orphan temp-branch
-            - gir rebase reddit test-branch
+            - git rebase reddit test-branch
             - echo "ALL BRANCHES"
             - git branch --list
             - echo "CURRENT BRANCH test-branch"
