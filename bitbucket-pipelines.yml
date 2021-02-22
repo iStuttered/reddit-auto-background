@@ -15,6 +15,7 @@ pipelines:
             - git fetch reddit test-branch:temp-branch
             - git checkout temp-branch
             - ls
+            - git merge master temp-branch
             - git rm bitbucket-pipelines.yml --force --ignore-unmatch
             - ls
             - echo "ALL staged files"
