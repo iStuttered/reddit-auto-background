@@ -12,13 +12,11 @@ pipelines:
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - echo "CURRENT BRANCH temp-branch"
+            - git pull test-branch
+            - ls
             - git checkout --orphan temp-branch
-            - git rebase reddit/test-branch
-            - echo "ALL BRANCHES"
-            - git branch --list
-            - echo "CURRENT BRANCH test-branch"
+            - ls
             - git rm bitbucket-pipelines.yml --force --ignore-unmatch
-            - git add .
             - ls
             - echo "ALL staged files"
             - git diff --name-only --staged
