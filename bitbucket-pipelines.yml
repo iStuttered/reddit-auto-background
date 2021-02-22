@@ -11,18 +11,17 @@ pipelines:
           name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
-            - echo "CURRENT BRANCH test-branch"
-            - git pull reddit test-branch
-            - echo "NEW BRANCH temp-branch"
             - echo "CURRENT BRANCH temp-branch"
             - git checkout temp-branch --orphan
             - echo "ALL BRANCHES"
             - git branch --list
+            - echo "CURRENT BRANCH test-branch"
+            - git pull reddit test-branch
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
             - ls ..
-            - git rm bitbucket-pipelines.yml
+            - git rm bitbucket-pipelines.yml --ignore-unmatch
             - ls
             - echo "ALL staged files"
             - git diff --name-only --staged
