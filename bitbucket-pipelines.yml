@@ -14,11 +14,10 @@ pipelines:
             - echo "CURRENT BRANCH test-branch"
             - git pull reddit test-branch
             - echo "NEW BRANCH temp-branch"
-            - git branch temp-branch
             - echo "CURRENT BRANCH temp-branch"
+            - git checkout temp-branch --orphan
             - echo "ALL BRANCHES"
             - git branch --list
-            - git checkout temp-branch
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
