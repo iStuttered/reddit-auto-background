@@ -8,7 +8,7 @@ pipelines:
   branches:
     master:
       - step:
-          name: "Pushing changes to master at git@github.com:istuttered/reddit-auto-background.git"
+          name: "Pushing changes to master at git@github.com:iStuttered/reddit-auto-background.git"
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - echo "CURRENT BRANCH temp-branch"
