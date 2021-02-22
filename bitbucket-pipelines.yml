@@ -16,7 +16,7 @@ pipelines:
             - echo "ALL BRANCHES"
             - git branch --list
             - echo "CURRENT BRANCH test-branch"
-            - git pull reddit test-branch
+            - git pull reddit test-branch:temp-branch
             - echo "CURRENT FOLDER"
             - ls
             - echo "PARENT FOLDER"
