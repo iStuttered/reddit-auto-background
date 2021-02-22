@@ -12,7 +12,8 @@ pipelines:
           script:
             - git remote add reddit git@github.com:istuttered/reddit-auto-background.git
             - echo "CURRENT BRANCH temp-branch"
-            - git checkout reddit/test-branch
+            - git fetch reddit test-branch:temp-branch
+            - git checkout temp-branch
             - ls
             - git rm bitbucket-pipelines.yml --force --ignore-unmatch
             - ls
